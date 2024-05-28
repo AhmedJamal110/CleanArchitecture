@@ -1,4 +1,5 @@
 using Application.Extensions;
+using Application.Middelwares;
 using Infrastructure.Extensions;
 
 namespace Web.Api
@@ -32,7 +33,7 @@ namespace Web.Api
 			app.UseHttpsRedirection();
 
 			app.UseAuthorization();
-
+			app.UseMiddleware<ErrorHandlingMiddleware>();
 
 			app.MapControllers();
 
