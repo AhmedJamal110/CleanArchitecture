@@ -24,6 +24,7 @@ namespace Infrastructure.Extensions
 
 
             services.AddScoped<IProperityRepo, ProperityRepository>();
+            services.AddScoped<IImageRepo, ImageRepo>();
             return services;
         }
 

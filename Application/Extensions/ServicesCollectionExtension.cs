@@ -1,4 +1,5 @@
-﻿using Application.ProfilesMapping;
+﻿using Application.PiplineBehaviour;
+using Application.ProfilesMapping;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,7 @@ namespace Application.Extensions
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPiplelineBehaviour<,>));
 
         }
 
